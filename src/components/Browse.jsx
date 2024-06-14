@@ -1,7 +1,13 @@
+import useLatestMovies from "../hooks/useLatestMovies";
+import Header from "./Header";
+
 const Browse = () => {
-    return (
-        <div>Browse</div>
-    )
-}
+    useLatestMovies();
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+};
 
 export default Browse;
