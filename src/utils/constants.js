@@ -11,3 +11,5 @@ export const FETCH_MOVIES_OPTIONS = {
     Authorization: `Bearer ${process.env.REACT_APP_MOVIES_API_KEY}`,
   },
 };
+
+export const POSTER_URL = "https://image.tmdb.org/t/p/w1280";

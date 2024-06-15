@@ -6,7 +6,7 @@ import SecondaryContainer from "./SecondaryContainer/SecondaryContainer";
 const Browse = () => {
     useLatestMovies();
   return (
-    <div>
+    <div className="bg-black text-white">
       <Header />
       <MainContainer />
       <SecondaryContainer />

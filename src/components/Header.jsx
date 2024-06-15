@@ -35,11 +35,11 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full bg-gradient-to-b from-black flex justify-between items-center px-8 fixed h-16 z-10 pt-4">
+    <div className="w-full bg-gradient-to-b from-black flex justify-between items-center px-4 md:px-8 fixed h-16 z-10 pt-4">
       <img
         src={LOGO}
         alt="logo"
-        className="w-44"
+        className="w-28 md:w-44"
       />
       {user && (
         <div className="has-tooltip flex flex-col items-center">
@@ -52,7 +52,7 @@ const Header = () => {
           <img
             src={USER_ICON}
             alt="user-logo"
-            className="mt-2 h-8 rounded-md"
+            className="mt-6 md:mt-2 h-8 rounded-md"
           />
           {user?.displayName && <span>{user?.displayName}</span>}
         </div>

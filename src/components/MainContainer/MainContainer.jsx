@@ -7,13 +7,13 @@ const MainContainer = () => {
   if (!movies) return;
 
   const mainMovie = movies[Math.floor(Math.random() * movies?.length)]; //selects random movie
-//   const mainMovie = movies[13]; //selects random movie
-  const { original_title, overview, id, poster_path } = mainMovie;
+  // const mainMovie = movies[13]; //selects random movie
+  const { original_title, overview, id, backdrop_path } = mainMovie;
 
   return (
     <div className="">
       <VideoTitle title={original_title} overview={overview} movieId={id} />
-      <VideoBackground movieId={id} title={original_title} poster={poster_path}/>
+      <VideoBackground movieId={id} title={original_title} poster={backdrop_path}/>
     </div>
   );
 };

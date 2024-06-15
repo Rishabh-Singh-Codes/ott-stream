@@ -86,13 +86,19 @@ const Login = () => {
   };
   return (
     <div
-      style={{
-        "--image-url": `url(https://assets.nflxext.com/ffe/siteui/vlv3/51c1d7f7-3179-4a55-93d9-704722898999/be90e543-c951-40d0-9ef5-e067f3e33d16/IN-en-20240610-popsignuptwoweeks-perspective_alpha_website_large.jpg)`,
-      }}
-      className="bg-[image:var(--image-url)] h-screen"
+      // style={{
+      //   "--image-url": `url(https://assets.nflxext.com/ffe/siteui/vlv3/51c1d7f7-3179-4a55-93d9-704722898999/be90e543-c951-40d0-9ef5-e067f3e33d16/IN-en-20240610-popsignuptwoweeks-perspective_alpha_website_large.jpg)`,
+      // }}
+      // className="bg-[image:var(--image-url)] h-screen"
+      className="h-screen"
     >
+      <img
+        src="https://assets.nflxext.com/ffe/siteui/vlv3/51c1d7f7-3179-4a55-93d9-704722898999/be90e543-c951-40d0-9ef5-e067f3e33d16/IN-en-20240610-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+        alt=""
+        className="absolute object-cover h-full w-full z-0"
+      />
       <Header />
-      <form className="w-4/5 md:w-1/3 m-auto bg-black/80 h-5/6 flex flex-col px-8 md:px-20 rounded-md pt-16">
+      <form className="w-4/5 md:w-1/3 mx-auto bg-black/80 h-5/6 flex flex-col px-8 md:px-20 rounded-md pt-16 relative top-20">
         <h1 className="text-white font-semibold text-3xl pb-6">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
