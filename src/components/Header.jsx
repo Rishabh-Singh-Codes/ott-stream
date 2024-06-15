@@ -35,7 +35,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full bg-gradient-to-b from-black flex justify-between items-center px-8">
+    <div className="w-full bg-gradient-to-b from-black flex justify-between items-center px-8 fixed h-16 z-10 pt-4">
       <img
         src={LOGO}
         alt="logo"
@@ -44,7 +44,7 @@ const Header = () => {
       {user && (
         <div className="has-tooltip flex flex-col items-center">
           <button
-            className="tooltip rounded-md shadow-lg p-1 bg-gray-100 text-red-500 mt-8 font-bold"
+            className="tooltip rounded-md shadow-lg p-1 bg-gray-100 text-red-500 mt-10 font-bold"
             onClick={handleSignout}
           >
             Logout

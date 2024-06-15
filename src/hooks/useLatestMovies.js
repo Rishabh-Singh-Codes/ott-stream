@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
 import { FETCH_MOVIES_OPTIONS } from "../utils/constants";
 import { addLatestMovies } from "../utils/moviesSlice";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const useLatestMovies = () => {
   const dispatch = useDispatch();
+  const hasFetchedMovies = useRef(false);
 
   const getMovies = async () => {
     const stringifiedData = await fetch(
@@ -12,13 +13,15 @@ const useLatestMovies = () => {
       FETCH_MOVIES_OPTIONS
     );
     const data = await stringifiedData.json();
-    console.log("data", data);
     dispatch(addLatestMovies(data.results));
   };
 
   useEffect(() => {
-    getMovies();
-  }, []);
+    if (!hasFetchedMovies.current) {
+      getMovies();
+      hasFetchedMovies.current = true;
+    }
+  }, [dispatch]);
 };
 
 export default useLatestMovies;
