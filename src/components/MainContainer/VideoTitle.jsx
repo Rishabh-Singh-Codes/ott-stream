@@ -1,11 +1,23 @@
 import { FaPlay } from "react-icons/fa";
 import { MdOutlineInfo } from "react-icons/md";
+import { useSelector } from "react-redux";
+import { POSTER_URL } from "../../utils/constants";
 
 const VideoTitle = ({ title, overview }) => {
+  const logo = useSelector((store) => store.movies.trailerLogo);
+
   return (
     <div className="w-screen aspect-video absolute">
       <div className="md:bg-gradient-to-r md:from-black/60 w-screen aspect-video md:w-1/3 md:h-screen pt-20 md:pt-48  px-6 md:px-16">
-        <h1 className="font-black text-lg md:text-6xl text-white">{title}</h1>
+        {logo ? (
+          <img
+            src={`${POSTER_URL}${logo.file_path}`}
+            alt={title}
+            className="w-1/6 md:w-full max-h-56"
+          />
+        ) : (
+          <h1 className="font-black text-lg md:text-6xl text-white">{title}</h1>
+        )}
         <p className="hidden md:block text-lg font-semibold mt-4 text-white">
           {overview.length > 150 ? `${overview.slice(0, 150)}...` : overview}
         </p>

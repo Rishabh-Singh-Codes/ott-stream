@@ -82,7 +82,6 @@ const Login = () => {
         });
     }
 
-    console.log("form submitted");
   };
   return (
     <div

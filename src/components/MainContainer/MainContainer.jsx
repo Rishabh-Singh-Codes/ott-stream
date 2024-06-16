@@ -7,7 +7,7 @@ const MainContainer = () => {
   if (!movies) return;
 
   const mainMovie = movies[Math.floor(Math.random() * movies?.length)]; //selects random movie
-  // const mainMovie = movies[13]; //selects random movie
+  // const mainMovie = movies[17]; //selects random movie
   const { original_title, overview, id, backdrop_path } = mainMovie;
 
   return (
